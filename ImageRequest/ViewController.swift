@@ -22,7 +22,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // TODO: Add all the networking code here!
-        let imageURL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg")
+//        let imageURL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg")
+        
+        let imageURL = URL(string: "http://www.petspyjamas.com/uploads/2013/07/cat-listening-to-music.jpg")
         
         let task = URLSession.shared.dataTask(with: imageURL!) { (data, response, error) in
             
