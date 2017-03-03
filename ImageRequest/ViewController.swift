@@ -22,5 +22,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // TODO: Add all the networking code here!
+        let imageURL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg")
+        
+        let task = URLSession.shared.dataTask(with: imageURL!) { (data, response, error) in
+            
+            if error == nil {
+                let downloadImage = UIImage(data: data!)
+                
+                performUIUpdatesOnMain {
+                    self.imageView.image = downloadImage
+                }
+                
+            }
+            
+            print("task finished")
+        }
+        
+        task.resume()
+        
     }
 }
